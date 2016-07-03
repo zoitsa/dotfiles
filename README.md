@@ -3,7 +3,11 @@ Peter's Dotfiles
 
 A home for my dot files. I use thoughtbot's [rcm](https://github.com/thoughtbot/rcm) to install/update the files
 
-Install
+CAUTION
+-------
+Currently there is an issue with the `zshrc` that will cause your system to go wonky (like vim won't work). When prompted to overwrite your `zshrc` the answer is `n` for no. 
+
+Install    
 -------
 
 Clone down this repo
