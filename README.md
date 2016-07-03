@@ -5,7 +5,7 @@ A home for my dot files. I use thoughtbot's [rcm](https://github.com/thoughtbot/
 
 CAUTION
 -------
-Currently there is an issue with the `zshrc` that will cause your system to go wonky (like vim won't work). When prompted to overwrite your `zshrc` the answer is `n` for no. 
+Currently there is an issue with the `zshrc` that will cause your system to go wonky. Like, vim won't work. When prompted to overwrite your `zshrc` the answer is `n` for no. 
 
 Install    
 -------
