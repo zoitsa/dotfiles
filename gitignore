@@ -1,0 +1,5 @@
+# MAC OS X hidden files
+.DS_Store
+
+# VIM swp files
+*.swp

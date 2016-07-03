@@ -1,5 +1,3 @@
-" vimrc examples
-" - http://blog.mojotech.com/post/68181056882/a-veterans-vimrc
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
@@ -8,16 +6,6 @@ endif
 " use zsh as shell
 set shell=/bin/zsh
 
-" set t_kb
-fixdel
-" TODO, this is a workaround for iterm2 2.0 ?
-set backspace=indent,eol,start
-set t_kD=^[[3~
-
-" dont use backup files
-set nobackup
-set noswapfile
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp   " store swap files here
 
 " Setup term color support
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
@@ -50,17 +38,18 @@ map <C-x>  <C-w>c
 " sudo save
 cmap w!! w !sudo tee % >/dev/null
 
-" Line numbers on
-set nu
+" Rel Line numbers on
+set relativenumber
 " easy relative numbers toggle
 function! NumberToggle()
   if(&relativenumber == 1)
-    set norelativenumber
+    set nu
+    "set relativenumber
   else
     set relativenumber
   endif
 endfunc
-nnoremap <Leader>n :silent call NumberToggle()<cr>
+nnoremap <C-n> :call NumberToggle()<cr>
 
 " Minimal number of screen lines to keep above and below the cursor
 set scrolloff=3
@@ -70,8 +59,6 @@ au BufRead,BufNewFile *.md,*.markerb set filetype=markdown
 autocmd FileType markdown setlocal spell
 let g:markdown_github_languages = ['ruby', 'erb=eruby', 'javascript']
 
-" add jbuilder syntax highlighting
-au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 " reopen file at the same line
 if has("autocmd")
@@ -153,16 +140,10 @@ set splitright
 " Always show status line.
 set laststatus=2
 
-" match ruby blocks on %
-runtime macros/matchit.vim
 
 " wrap git messages at 72
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
-" source $MYVIMRC reloads the saved $MYVIMRC
-:nmap <Leader>S :source $MYVIMRC<CR><CR>
-" opens $MYVIMRC for editing
-:nmap <Leader>E :e $MYVIMRC<CR><CR>
 
 " Use The Silver Searcher instead of grep
 if executable('ag')
@@ -172,20 +153,15 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
-  nnoremap \| :Ag<SPACE>
-  nnoremap <Leader>\| :Ag<SPACE><C-r><C-w><CR><CR>
-else
-  " use git grep
-  set grepprg=git\ grep\ --no-color
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-  let g:ctrlp_use_caching = 0
-  " bind K to grep word under cursor
-  nnoremap K :Ggrep <C-R>=expand("<cword>")<CR><CR>
-endif
-autocmd QuickFixCmdPost *grep* cwindow
 
-" Disable man lookup
-noremap K <nop>
+endif
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+
+nnoremap \ :Ag<SPACE>
 
 " draw a line at column 80
 set textwidth=80
@@ -215,11 +191,6 @@ if $ITERM_PROFILE == 'Solarized Dark'
 endif
 
 
-" Close the quickfix when it's the last thing open
-aug QFClose
-  au!
-  au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
-aug END
 
 " Leader Ctrl-] to open ctag in vsplit
 map <leader><C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
@@ -239,22 +210,10 @@ nnoremap <C-b> :CtrlPBuffer<CR>
 " search in current, ancestor, root
 let g:ctrlp_working_path_mode = 'car'
 
-" VimVroom for running specs
-if filereadable('./bin/spring')
-  let g:vroom_use_spring = 1
-  let g:vroom_use_binstub = 1
-elseif filereadable('./Gemfile')
-  let g:vroom_use_bundle_exec = 1
-endif
 
 " Airline
 let g:airline_powerline_fonts = 1
 
-" Syntastic
-let g:syntastic_auto_loc_list = 1 " Close the location-list when errors are gone
-let g:syntastic_check_on_open = 0
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_jump = 0
 
 "Writing
 autocmd User GoyoEnter Limelight

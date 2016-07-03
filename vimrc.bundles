@@ -8,41 +8,43 @@ call vundle#rc()
 " required!
 Bundle 'gmarik/vundle'
 
-" My bundles here:
+" Javascript
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
-
+" Show Git Diffs in Gutter
 Bundle 'airblade/vim-gitgutter'
+" Autoclose { ( " '
+Bundle 'jiangmiao/auto-pairs'
+
+" use <tab> to open the ctrl-n autocomplete menu
+Bundle 'ervandew/supertab'
+
+" comment plugin
+Bundle 'tpope/vim-commentary'
+
+" Color Scheme
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'bling/vim-airline'
-Bundle 'danro/rename.vim'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'kchmck/vim-coffee-script'
+" Ctrl P for searching projects
 Bundle 'kien/ctrlp.vim'
-Bundle 'mustache/vim-mustache-handlebars'
+" Ag for faster searching
 Bundle 'rking/ag.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'skalnik/vim-vroom'
-Bundle 'tpope/vim-endwise'
+" Git commands in vim such as :Gstatus to view repository status
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-rbenv'
+" Useful for editing surround tags like in html or () or {}
 Bundle 'tpope/vim-surround'
+" Useful to someone not me shortcuts
 Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-ruby/vim-ruby'
+" enable :tComment to toggle comments
 Bundle 'vim-scripts/tComment'
+"Vim Markdown
+Bundle 'gabrielelana/vim-markdown'
+
+" close html tags for me
+Bundle 'alvan/vim-closetag'
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx,*.js"
 
 " Writing
-Bundle 'tpope/vim-markdown'
-Bundle 'reedes/vim-pencil'
-Bundle 'junegunn/goyo.vim'
-Bundle 'reedes/vim-wordy'
-Bundle 'junegunn/limelight.vim'
 "
-" Bundle 'wesQ3/vim-windowswap'
-" Bundle 'ervandew/supertab'
-" Bundle 'terryma/vim-multiple-cursors'
-" Bundle 'skwp/greplace'
 Bundle 'chriskempson/vim-tomorrow-theme'
 filetype on

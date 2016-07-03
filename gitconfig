@@ -3,6 +3,7 @@
   excludesfile = ~/.gitignore
   editor = vim
   pager = less -r
+	exclucdesfile = /Users/Peter/.gitignore
 [color]
   ui = auto
   interactive = auto
@@ -48,3 +49,6 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[user]
+	name = Redux like DA
+	email = reduxlikeda@gmail.com
