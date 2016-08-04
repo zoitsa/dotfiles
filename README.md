@@ -14,9 +14,15 @@ Clone down this repo
 
     git clone git://github.com/peterbsmith2/dotfiles.git ~/.dotfiles
 
-Install [rcm](https://github.com/thoughtbot/rcm):
+Install [rcm](https://github.com/thoughtbot/rcm) on Mac:
 
     brew bundle
+    
+Install [rcm](https://github.com/thoughtbot/rcm) on Ubuntu: 
+
+    sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
+    sudo apt-get update
+    sudo apt-get install rcm
 
 Install:
 
