@@ -20,8 +20,8 @@ Install [rcm](https://github.com/thoughtbot/rcm) on Mac:
     
 Install [rcm](https://github.com/thoughtbot/rcm) on Ubuntu: 
 
-    sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
-    sudo apt-get update
+    sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm \
+    sudo apt-get update \
     sudo apt-get install rcm
 
 Install:
