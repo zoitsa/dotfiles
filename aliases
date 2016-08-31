@@ -9,3 +9,8 @@ alias :q="exit"
 alias wds="webpack-dev-server"
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
+alias t="todo.sh"
+alias ga="git add -A"
+alias gc="git commit"
+alias gl="git pull"
+alias gh="git push"

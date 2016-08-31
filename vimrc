@@ -224,3 +224,24 @@ if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
 
+" ------------------------------------------------------------------------------
+" Code Folding
+" ------------------------------------------------------------------------------
+set foldmethod=indent
+set foldlevel=1
+set nofoldenable
+set foldnestmax=10
+
+" fold code on space
+nnoremap <space> za
+vnoremap <space> zf
+
+" don't ignore stuff in folds
+set foldignore=
+
+" save and restore folds when a file is closed and re-opened
+autocmd BufWinLeave ?* mkview
+autocmd BufWinEnter ?* silent loadview
+
+" Erasing previously entered characters in insert mode
+set backspace=indent,eol,start

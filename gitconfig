@@ -50,5 +50,7 @@
 	smudge = git lfs smudge %f
 	required = true
 [user]
-	name = Redux like DA
-	email = reduxlikeda@gmail.com
+	name = Peter B Smith
+	email = peterbutlersmith@gmail.com
+[cor]
+	editor = vim
