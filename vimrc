@@ -177,9 +177,11 @@ endif
 
 " if using iterm and my light profile, lighten things up
 if $ITERM_PROFILE =~ 'Light'
-  colorscheme Tomorrow
+  colorscheme cobalt2
   set background=light
   highlight ColorColumn ctermbg=255 guibg=#121212
+  highlight Normal ctermbg=NONE
+  highlight nonText ctermbg=NONE
   " copied this line from above
   hi CursorLine cterm=none
 endif
