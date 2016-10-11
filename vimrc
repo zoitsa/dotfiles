@@ -164,9 +164,9 @@ command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 
 " draw a line at column 80
-set textwidth=80
-let &colorcolumn=join(range(80,80),",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
+" set textwidth=80
+" let &colorcolumn=join(range(80,80),",")
+" highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " set custom cursor -- vertical bar in insert mode (iTerm2)
 " from http://www.iterm2.com/#/section/documentation/escape_codes
@@ -179,11 +179,11 @@ endif
 if $ITERM_PROFILE =~ 'Light'
   colorscheme cobalt2
   set background=light
-  highlight ColorColumn ctermbg=255 guibg=#121212
+  highlight ColorColumn ctermbg=000 guibg=#121212
   highlight Normal ctermbg=NONE
   highlight nonText ctermbg=NONE
   " copied this line from above
-  hi CursorLine cterm=none
+  " hi CursorLine cterm=none
 endif
 if $ITERM_PROFILE =~ 'Solarized.*'
   colorscheme solarized
