@@ -207,8 +207,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " CtrlP + ctags
 nnoremap <leader>p :CtrlPTag<CR>
-" CtrlP + buffers
-nnoremap <C-b> :CtrlPBuffer<CR>
 " search in current, ancestor, root
 let g:ctrlp_working_path_mode = 'car'
 
