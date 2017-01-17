@@ -39,6 +39,8 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/tComment'
 "Vim Markdown
 Bundle 'gabrielelana/vim-markdown'
+"Vim Syntastic
+Bundle 'vim-syntastic/syntastic'
 
 " close html tags for me
 Bundle 'alvan/vim-closetag'
