@@ -246,12 +246,26 @@ autocmd BufWinEnter ?* silent loadview
 " Erasing previously entered characters in insert mode
 set backspace=indent,eol,start
 
-" Syntastic Recommended Settings
+" Syntastic Settings from:
+" https://medium.com/usevim/in-editor-linting-with-syntastic-6814122bdbec#.il7uml502
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
+" Use local ESlint from:
+" http://remarkablemark.org/blog/2016/09/28/vim-syntastic-eslint/
+let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
