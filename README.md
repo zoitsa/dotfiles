@@ -1,11 +1,11 @@
-Peter's Dotfiles
+Zoe's Dotfiles
 ===============
 
 A home for my dot files. I use thoughtbot's [rcm](https://github.com/thoughtbot/rcm) to install/update the files
 
 CAUTION
 -------
-Currently there is an issue with the `zshrc` that will cause your system to go wonky. Like, vim won't work. When prompted to overwrite your `zshrc` the answer is `n` for no. 
+Currently there is an issue with the `zshrc` that will cause your system to go wonky. Like, vim won't work. When prompted to overwrite your `zshrc` the answer is `n` for no.
 
 Install    
 -------
@@ -17,11 +17,11 @@ Clone down this repo
 Install [rcm](https://github.com/thoughtbot/rcm) on Mac:
 
     brew bundle
-    
-Install [rcm](https://github.com/thoughtbot/rcm) on Ubuntu: 
 
-    sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm 
-    sudo apt-get update 
+Install [rcm](https://github.com/thoughtbot/rcm) on Ubuntu:
+
+    sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
+    sudo apt-get update
     sudo apt-get install rcm
 
 Install:
