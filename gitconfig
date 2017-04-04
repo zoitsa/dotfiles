@@ -3,7 +3,7 @@
   excludesfile = ~/.gitignore
   editor = vim
   pager = less -r
-	exclucdesfile = /Users/Peter/.gitignore
+	exclucdesfile = /Users/zoeckoulouris/.gitignore
 [color]
   ui = auto
   interactive = auto
@@ -50,7 +50,7 @@
 	smudge = git lfs smudge %f
 	required = true
 [user]
-	name = Peter B Smith
-	email = peterbutlersmith@gmail.com
+	name = Zoe C Koulouris
+	email = zck0430@gmail.com
 [cor]
 	editor = vim

@@ -3,7 +3,7 @@ if [ $USER = 'ubuntu' ]
 then
   export ZSH=/home/ubuntu/.oh-my-zsh
 else
-  export ZSH=/Users/Peter/.oh-my-zsh
+  export ZSH=/Users/zoeckoulouris/.oh-my-zsh
 fi
 
 # Set name of the theme to load.
